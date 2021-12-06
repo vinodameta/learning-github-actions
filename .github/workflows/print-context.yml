@@ -28,7 +28,3 @@ jobs:
         env:
           MATRIX_CONTEXT: ${{ toJSON(matrix) }}
         run: echo "$MATRIX_CONTEXT"
-      - name: Dump Event context
-        env:
-          EVENT_CONTEXT: ${{ toJSON(event) }}
-        run: echo "$EVENT_CONTEXT"
