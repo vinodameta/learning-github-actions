@@ -1,2 +1,2 @@
 # learning-github-actions
-test
+test actions
