@@ -1,17 +1,11 @@
 name: learn-github-actions
 on: [push]
 jobs:
-  setup:
+  example-job:
     runs-on: ubuntu-latest
     steps:
-      - run: ./setup_server.sh
-  build:
-    needs: setup
-    runs-on: ubuntu-latest
-    steps:
-      - run: ./build_server.sh
-  test:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - run: ./test_server.sh
+      - name: Retrieve secret
+        env:
+          super_secret: ${{ secrets.SUPERSECRET }}
+        run: |
+          example-command "$super_secret"
