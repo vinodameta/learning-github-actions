@@ -22,3 +22,14 @@ jobs:
     steps:
     - name: ${{ github.event.inputs.job }} - step 1
       run: echo "${{ github.event.inputs.job }} triggered!"
+      run: echo "hi Vinod !"
+
+
+    name: Clone repo 
+    runs-on: ubuntu-latest
+    if: ${{ github.event.inputs.job == 'without-terraform'}}
+    steps:
+    - name: ${{ github.event.inputs.job }} - step 1
+      run: echo "${{ github.event.inputs.job }} triggered!"
+      - name: Clone Repository (Latest)
+        uses: actions/checkout@v2
