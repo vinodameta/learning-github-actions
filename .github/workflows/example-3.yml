@@ -45,3 +45,20 @@ jobs:
     steps:
     - name: stage-3
       run: echo "stage-4 triggered!"
+    
+  
+  stage5:
+    name: Deploy stage5
+    runs-on: ubuntu-latest
+    needs: with-terraform
+    steps:
+    - name: stage-5
+      run: echo "stage-5 triggered!"
+
+  stage6:
+    name: Deploy stage6
+    runs-on: ubuntu-latest
+    needs: stage3
+    steps:
+    - name: stage-6
+      run: echo "stage-6 triggered!"
