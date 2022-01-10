@@ -50,6 +50,7 @@ jobs:
   stage5:
     name: Deploy stage5
     runs-on: ubuntu-latest
+    if: ${{ github.event_name == 'push'}}
     steps:
     - name: stage-5
       run: echo "stage-5 triggered!"
