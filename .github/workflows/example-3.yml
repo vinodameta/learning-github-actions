@@ -14,6 +14,8 @@ jobs:
     steps:
     - name: ${{ github.event.inputs.job }} - step 1
       run: echo "${{ github.event.inputs.job }} triggered!"
+    - name: stage - step 2
+      run: echo "hi this is with-terraform!"
 
   without-terraform:
     name: Deploy without-terraform
