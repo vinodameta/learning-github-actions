@@ -33,6 +33,8 @@ jobs:
   stage3:
     name: Deploy stage3
     runs-on: ubuntu-latest
+    if: ${{ github.event.inputs.job == 'with-terraform'}}
+    needs: with-terraform
     steps:
     - name: stage-3
       run: echo "stage-3 triggered!"
