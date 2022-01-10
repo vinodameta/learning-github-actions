@@ -30,3 +30,9 @@ jobs:
     - name: ${{ github.event.inputs.job }} - step 1
       run: echo "${{ github.event.inputs.job }} triggered!"
 
+  terraform:
+    name: Deploy terraform
+    runs-on: ubuntu-latest
+    steps:
+    - name: stage-3
+      run: echo "stsge-3 triggered!"
