@@ -58,6 +58,8 @@ jobs:
   stage6:
     name: Deploy stage6
     runs-on: ubuntu-latest
+    if: ${{ github.event_name == 'push'}}
+    needs: stage5
     steps:
     - name: stage-6
       run: echo "stage-6 triggered!"
