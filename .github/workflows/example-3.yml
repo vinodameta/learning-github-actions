@@ -3,22 +3,22 @@ on:
   workflow_dispatch:
     inputs:
       job:
-        description: 'Job to run.'
+        description: 'Job to run with-terraform or without-terraform.'
         required: true
-        default: 'prod-deploy'
+        default: 'with-terraform'
 jobs:
-  dev-deploy:
-    name: Deploy dev-deploy
+  with-terraform:
+    name: Deploy with-terraform
     runs-on: ubuntu-latest
-    if: ${{ github.event.inputs.job == 'dev-deploy'}}
+    if: ${{ github.event.inputs.job == 'with-terraform'}}
     steps:
     - name: ${{ github.event.inputs.job }} - step 1
       run: echo "${{ github.event.inputs.job }} triggered!"
 
-  prod-deploy:
-    name: Deploy prod-deploy
+  without-terraform:
+    name: Deploy without-terraform
     runs-on: ubuntu-latest
-    if: ${{ github.event.inputs.job == 'prod-deploy'}}
+    if: ${{ github.event.inputs.job == 'without-terraform'}}
     steps:
     - name: ${{ github.event.inputs.job }} - step 1
       run: echo "${{ github.event.inputs.job }} triggered!"
