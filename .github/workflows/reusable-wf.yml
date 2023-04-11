@@ -7,11 +7,11 @@ on:
       releaseVersion:
         description: "Default version to use when preparing a release."
         required: true
-        default: "X.Y.Z"
+        default: "1.1.10"
       developmentVersion:
         description: "Default version to use for new local working copy."
         required: true
-        default: "X.Y.Z-SNAPSHOT"
+        default: "1.1.11-SNAPSHOT"
 
 jobs:
   build:
