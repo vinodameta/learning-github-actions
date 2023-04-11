@@ -2,16 +2,6 @@ name: release test
 
 on:
   workflow_call:
-  workflow_dispatch:
-    inputs:
-      releaseVersion:
-        description: "Default version to use when preparing a release."
-        required: true
-        default: "1.1.10"
-      developmentVersion:
-        description: "Default version to use for new local working copy."
-        required: true
-        default: "1.1.11-SNAPSHOT"
 
 jobs:
   build:
